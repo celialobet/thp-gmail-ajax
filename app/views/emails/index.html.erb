@@ -1,0 +1,33 @@
+
+<div class="container-fluid">
+    <h1>Emails</h1>
+
+    <%= link_to 'Get new email', emails_path, method: "POST",remote: true, class: "btn btn-primary offset-sm-9"%>
+
+  <div id="display-email">
+  </div>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Select</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+    
+  <tbody id="index-emails">
+        <% @emails.each do |email| %>
+        <tr id="<%= email.id %>">
+          <td>
+            <%= link_to email.object, email, remote: true %>
+          </td>
+        </tr>
+        <% end %>
+  </tbody>
+  </table>
+  
+</div>
+<br>
+
